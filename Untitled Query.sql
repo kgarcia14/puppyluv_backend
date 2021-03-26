@@ -4,7 +4,6 @@ first_name text NOT NULL,
 last_name text NOT NULL,
 age integer  NOT NULL,
 gender text NOT NULL,
-city text NOT NULL,
 zipcode integer NOT NULL,
 about_us text NOT NULL,
 user_img VARCHAR(200),
@@ -15,6 +14,4 @@ pet_personality VARCHAR(200),
 pet_img VARCHAR (500) 
 );
 
--- CREATE TABLE favorites (
---     liked_users VARCHAR(200) NOT NULL,
--- )
+DROP TABLE ;

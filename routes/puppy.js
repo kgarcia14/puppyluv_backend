@@ -2,19 +2,33 @@
 
 const express = require('express'),
     router = express.Router(),
-    puppyModel = require('../models/puppyModel'),
+    puppyModel = require('../models/puppyModel')
 
 
-    router.get('/', async(req, res) => {
-        const puppyData = await puppyModel.getAll();
+router.get('/', async(req, res) => {
+    const puppyData = await puppyModel.getAll();
+    res.json(puppyData).status(200);
 
-        res.render('template', {
-            locals: {
-                title: 'Select a Puppy',
-                data: puppyData
-            },
-            patials: {
-                body: 'partials/puppy-list'
-            }
-        })
-    })
+});
+router.get('/user_profile', async(req, res) => {
+    const { user_profile } = req.params;
+    const profile = await puppyModel.getAll(user_profile);
+    if (profile) {
+        res.json(profile).status(200);
+    } else {
+        res.status(400).status;
+    }
+});
+
+router.post('/', async(req, res) => {
+    const { pet_name, pet_image } = req.body;
+
+    const response = await puppyModel.addEntry(pet_name, pet_breed, pet_age, gender, pet_personality, pet_image);
+    console.log("Post data response is:", response);
+    if (response.rowCount >= 1) {
+        res.redirect('/user_profile')
+    } else {
+        res.sendStatus(500)
+    }
+});
+module.exports = router;
