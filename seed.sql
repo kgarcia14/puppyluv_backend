@@ -1,0 +1,1 @@
+INSERT INTO pet_profile (pet_name, pet_breed, pet_img) VALUES ('bobby', 'boxer', 'img/boxer_put.jpeg');

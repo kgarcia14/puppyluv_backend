@@ -2,19 +2,21 @@
 
 const express = require('express'),
     router = express.Router(),
-    puppyModel = require('../models/puppyModel'),
+    puppyModel = require('../models/puppyModel')
 
 
-    router.get('/', async(req, res) => {
-        const puppyData = await puppyModel.getAll();
+router.get('/', async(req, res) => {
+    const puppyData = await puppyModel.getAll();
+    res.json(puppyData).status(200);
 
-        res.render('template', {
-            locals: {
-                title: 'Select a Puppy',
-                data: puppyData
-            },
-            patials: {
-                body: 'partials/puppy-list'
-            }
-        })
-    })
+});
+router.get('/:pet_name', async(req, res) => {
+    const { pet_name } = req.params;
+    const petName = await puppyModel.getByName(pet_name);
+    if (petName) {
+        res.json(petName).status(200);
+    } else {
+        res.status(400);
+    }
+});
+module.exports = router;
