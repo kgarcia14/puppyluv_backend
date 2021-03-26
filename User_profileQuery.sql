@@ -15,6 +15,4 @@ pet_personality VARCHAR(200),
 pet_img VARCHAR (500) 
 );
 
--- CREATE TABLE favorites (
---     liked_users VARCHAR(200) NOT NULL,
--- )
+DROP TABLE user_profile;
