@@ -77,7 +77,7 @@ class UsersModel {
             return error.message;
         }
     }
-    static async updatePet1(user_nickname, pet_name1, pet_breed1, pet_age1, pet_personality1, pet_img1) {
+    static async updatePet3(user_nickname, pet_name3, pet_breed3, pet_age3, pet_personality3, pet_img3) {
         try {
             const response = await db.one(`
             UPDATE user_profile
