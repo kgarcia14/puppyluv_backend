@@ -52,6 +52,19 @@ class UsersModel {
             return error.message;
         }
     }
+
+    static async updateEntry(user_nickname, about_us, pet_name, pet_breed, pet_age, pet_personality, pet_img) {
+        try {
+            const response = await db.one(`
+            UPDATE user_profile
+            SET about_us = '${about_us}', pet_name = '${pet_name}', pet_breed = '${pet_breed}', pet_age = ${pet_age}, pet_personality = '${pet_personality}', pet_img = '${pet_img}'
+            WHERE user_nickname = '${user_nickname}';`);
+            return response;
+        } catch(error) {
+            console.log("error", error.message)
+            return error.message;
+        }
+    }
 }
 
 module.exports = UsersModel;

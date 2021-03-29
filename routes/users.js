@@ -31,4 +31,15 @@ router.post('/add', async (req, res) => {
     }
 });
 
+router.post('/update', async (req, res) => {
+    const { user_nickname, about_us, pet_name, pet_breed, pet_age, pet_personality, pet_img } = req.body;
+    console.log('reqBody: ', req.body);
+    const response = await usersModel.updateEntry(user_nickname, about_us, pet_name, pet_breed, pet_age, pet_personality, pet_img);
+    if (response) {
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(500)
+    }
+});
+
 module.exports = router;
