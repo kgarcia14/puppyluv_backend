@@ -25,7 +25,7 @@ class UsersModel {
             const query = `SELECT * FROM user_profile;`;
             const response = await db.any(query);
             return response;
-        } catch(error) {
+        } catch (error) {
             return error.message
         }
     }
@@ -37,7 +37,7 @@ class UsersModel {
             const query = `SELECT * FROM user_profile WHERE user_nickname = '${user_nickname}';`;
             const response = await db.one(query);
             return response;
-        } catch(error) {
+        } catch (error) {
             return error.message;
         }
     }
@@ -47,7 +47,7 @@ class UsersModel {
             const response = await db.result(`INSERT INTO user_profile (first_name, last_name, age, gender, city, zipcode, about_us, user_img, user_nickname, pet_name, pet_breed, pet_age, pet_personality, pet_img) 
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14);`, [first_name, last_name, age, gender, city, zipcode, about_us, user_img, user_nickname, pet_name, pet_breed, pet_age, pet_personality, pet_img]);
             return response;
-        } catch(error) {
+        } catch (error) {
             console.log("error", error.message)
             return error.message;
         }
