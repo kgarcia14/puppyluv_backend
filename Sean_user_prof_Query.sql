@@ -8,13 +8,12 @@ city text,
 zipcode integer,
 about_us text,
 user_img VARCHAR(200),
+user_nickname VARCHAR(200),
 pet_name VARCHAR(200),
 pet_breed VARCHAR(200),
 pet_age integer,
 pet_personality VARCHAR(200),
-pet_img VARCHAR (500) 
+pet_img VARCHAR (500)
 );
 
--- CREATE TABLE favorites (
---     liked_users VARCHAR(200) NOT NULL,
--- )
+DROP TABLE user_profile;

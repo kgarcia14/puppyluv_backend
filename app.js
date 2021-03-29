@@ -23,9 +23,9 @@ server.listen(port, hostname, () => {
 });
 
 const rootController = require('./routes/index'),
-    puppyController = require('./routes/puppy');
-// usersController = require('./routes/users');
+    puppyController = require('./routes/puppy'),
+    usersController = require('./routes/users');
 
 app.use('/', rootController);
 app.use('/puppy', puppyController);
-// app.use('/users', usersController);
+app.use('/users', usersController);
