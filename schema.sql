@@ -12,9 +12,12 @@ pet_name VARCHAR(200),
 pet_breed VARCHAR(200),
 pet_age integer,
 pet_personality VARCHAR(200),
-pet_img VARCHAR (500) 
+pet_img VARCHAR (500),
+favorites_id INTEGER
 );
 
--- CREATE TABLE favorites (
---     liked_users VARCHAR(200) NOT NULL,
--- )
+CREATE TABLE favorites (
+    id serial PRIMARY KEY
+    liked_users VARCHAR(200) NULL,
+    
+)
