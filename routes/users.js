@@ -32,9 +32,9 @@ router.post('/add', async (req, res) => {
 });
 
 router.post('/update/pet1', async (req, res) => {
-    const { user_nickname, about_us, pet_name1, pet_breed1, pet_age1, pet_personality1, pet_img1 } = req.body;
+    const { user_nickname, pet_name1, pet_breed1, pet_age1, pet_personality1, pet_img1 } = req.body;
     console.log('reqBody: ', req.body);
-    const response = await usersModel.updatePet1(user_nickname, about_us, pet_name1, pet_breed1, pet_age1, pet_personality1, pet_img1);
+    const response = await usersModel.updatePet1(user_nickname, pet_name1, pet_breed1, pet_age1, pet_personality1, pet_img1);
     if (response) {
         res.sendStatus(200)
     } else {
