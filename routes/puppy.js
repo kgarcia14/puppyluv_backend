@@ -20,9 +20,9 @@ router.get('/user_profile', async(req, res) => {
     }
 });
 
-router.post('/', async(req, res) => {
+router.post('/add', async(req, res) => {
     const { pet_name, pet_image } = req.body;
-
+    console.log('reqBody: ', req.body);
     const response = await puppyModel.addEntry(pet_name, pet_breed, pet_age, gender, pet_personality, pet_image);
     console.log("Post data response is:", response);
     if (response.rowCount >= 1) {

@@ -21,10 +21,52 @@ router.get('/:user_nickname', async (req, res) => {
 });
 
 router.post('/add', async (req, res) => {
-    const { first_name, last_name, age, gender, city, zipcode, about_us, user_img, user_nickname, pet_name, pet_breed, pet_age, pet_personality, pet_img } = req.body;
+    const { first_name, last_name, age, gender, city, zipcode, user_img, user_nickname, numb_pets } = req.body;
     console.log('reqBody: ', req.body);
-    const response = await usersModel.addEntry(first_name, last_name, age, gender, city, zipcode, about_us, user_img, user_nickname, pet_name, pet_breed, pet_age, pet_personality, pet_img);
+    const response = await usersModel.addEntry(first_name, last_name, age, gender, city, zipcode, user_img, user_nickname, numb_pets);
     if (response.rowCount >= 1) {
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(500)
+    }
+});
+
+router.post('/update/pet1', async (req, res) => {
+    const { user_nickname, pet_name1, pet_breed1, pet_age1, pet_personality1, pet_img1 } = req.body;
+    console.log('reqBody: ', req.body);
+    const response = await usersModel.updatePet1(user_nickname, pet_name1, pet_breed1, pet_age1, pet_personality1, pet_img1);
+    if (response) {
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(500)
+    }
+});
+
+router.post('/update/pet2', async (req, res) => {
+    const { user_nickname, pet_name2, pet_breed2, pet_age2, pet_personality2, pet_img2 } = req.body;
+    console.log('reqBody: ', req.body);
+    const response = await usersModel.updatePet2(user_nickname, pet_name2, pet_breed2, pet_age2, pet_personality2, pet_img2);
+    if (response) {
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(500)
+    }
+});
+router.post('/update/pet3', async (req, res) => {
+    const { user_nickname, pet_name3, pet_breed3, pet_age3, pet_personality3, pet_img3 } = req.body;
+    console.log('reqBody: ', req.body);
+    const response = await usersModel.updatePet3(user_nickname, pet_name3, pet_breed3, pet_age3, pet_personality3, pet_img3);
+    if (response) {
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(500)
+    }
+});
+router.post('/update/about_us', async (req, res) => {
+    const { user_nickname, about_us } = req.body;
+    console.log('reqBody: ', req.body);
+    const response = await usersModel.updateAboutUs(user_nickname, about_us);
+    if (response) {
         res.sendStatus(200)
     } else {
         res.sendStatus(500)
