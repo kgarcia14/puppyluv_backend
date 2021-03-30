@@ -1,5 +1,4 @@
-const db = require('./conn'),
-    slugify = require('slugify');
+const db = require('./conn')
 
 class UsersModel {
     constructor(id, first_name, last_name, age, gender, city, zipcode, about_us, user_img, user_nickname, pet_name, pet_breed, pet_age, pet_personality, pet_img) {
@@ -90,10 +89,12 @@ class UsersModel {
         }
     }
     static async updateAboutUs(user_nickname, about_us) {
+        const str = about_us;
+        const newStr = str.replace(/'/g, "''")
         try {
             const response = await db.one(`
             UPDATE user_profile
-            SET about_us = '${about_us}'
+            SET about_us = '${newStr}'
             WHERE user_nickname = '${user_nickname}';`);
             return response;
         } catch(error) {
