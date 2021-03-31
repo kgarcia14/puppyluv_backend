@@ -30,10 +30,11 @@ class UsersModel {
     }
 
     static async getByUserNickname(user_nickname) {
-        console.log("user_nickname is:", user_nickname)
+        const str = user_nickname;
+        const newStr = str.replace(/%7c/g, "|")
+        console.log("user_nickname is:", newStr)
         try {
-            console.log(user_nickname)
-            const query = `SELECT * FROM user_profile WHERE user_nickname = '${user_nickname}';`;
+            const query = `SELECT * FROM user_profile WHERE user_nickname = '${newStr}';`;
             const response = await db.one(query);
             return response;
         } catch (error) {
