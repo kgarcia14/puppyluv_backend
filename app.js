@@ -25,9 +25,11 @@ server.listen(port, hostname, () => {
 const rootController = require('./routes/index'),
     puppyController = require('./routes/puppy'),
     usersController = require('./routes/users'),
+    filterController = require('./routes/filter'),
     favoritesController = require('./routes/favorites');
 
 app.use('/', rootController);
 app.use('/puppy', puppyController);
 app.use('/users', usersController);
+app.use('/filter', filterController);
 app.use('/favorites', favoritesController);
