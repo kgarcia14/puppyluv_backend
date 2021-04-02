@@ -42,6 +42,18 @@ class UsersModel {
         }
     }
 
+    static async getById(id) {
+        const UserId = id;
+        console.log("the users ID is:", UserId)
+        try {
+            const query = `SELECT * FROM user_profile WHERE id = '${UserId}';`;
+            const response = await db.one(query);
+            return response;
+        } catch (error) {
+            return error.message;
+        }
+    }
+
     static async addEntry(first_name, last_name, age, gender, city, zipcode, user_img, user_nickname, numb_pets) {
         try {
             const response = await db.result(`INSERT INTO user_profile (first_name, last_name, age, gender, city, zipcode, user_img, user_nickname, numb_pets) 
