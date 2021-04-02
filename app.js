@@ -26,6 +26,7 @@ const rootController = require('./routes/index'),
     puppyController = require('./routes/puppy'),
     usersController = require('./routes/users'),
     favoritesController = require('./routes/favorites'),
+    filterController = require('./routes/filter'),
     userIdController = require('./routes/user_id');
 
 app.use('/', rootController);
@@ -33,3 +34,4 @@ app.use('/puppy', puppyController);
 app.use('/users', usersController);
 app.use('/favorites', favoritesController);
 app.use('/user_id', userIdController);
+app.use('/filter', filterController);
