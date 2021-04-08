@@ -22,7 +22,7 @@ class FilterModel {
     static async getFilteredAge1820(age) {
         console.log("in Model: ", age)
         try {
-            const query = `SELECT * FROM user_profile WHERE age > 18 AND age < 20;`;
+            const query = `SELECT * FROM user_profile WHERE age > 17 AND age < 21;`;
             const response = await db.any(query);
             return response;
         } catch (error) {
@@ -32,7 +32,7 @@ class FilterModel {
     static async getFilteredAge2025(age) {
         console.log("in Model: ", age)
         try {
-            const query = `SELECT * FROM user_profile WHERE age > 20 AND age < 25;`;
+            const query = `SELECT * FROM user_profile WHERE age > 19 AND age < 26;`;
             const response = await db.any(query);
             return response;
         } catch (error) {
@@ -42,7 +42,7 @@ class FilterModel {
     static async getFilteredAge2530(age) {
         console.log("in Model: ", age)
         try {
-            const query = `SELECT * FROM user_profile WHERE age > 25 AND age < 30;`;
+            const query = `SELECT * FROM user_profile WHERE age > 24 AND age < 31;`;
             const response = await db.any(query);
             return response;
         } catch (error) {
@@ -52,7 +52,7 @@ class FilterModel {
     static async getFilteredAge3035(age) {
         console.log("in Model: ", age)
         try {
-            const query = `SELECT * FROM user_profile WHERE age > 30 AND age < 35;`;
+            const query = `SELECT * FROM user_profile WHERE age > 29 AND age < 36;`;
             const response = await db.any(query);
             return response;
         } catch (error) {
@@ -62,7 +62,7 @@ class FilterModel {
     static async getFilteredAge3540(age) {
         console.log("in Model: ", age)
         try {
-            const query = `SELECT * FROM user_profile WHERE age > 35 AND age < 40;`;
+            const query = `SELECT * FROM user_profile WHERE age > 34 AND age < 41;`;
             const response = await db.any(query);
             return response;
         } catch (error) {

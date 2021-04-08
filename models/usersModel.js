@@ -65,11 +65,11 @@ class UsersModel {
         }
     }
 
-    static async updatePet1(user_nickname, pet_name1, pet_breed1, pet_age1, pet_personality1, pet_img1) {
+    static async updatePet1(user_nickname, pet_name1, pet_breed1, pet_age1, pet_personality1) {
         try {
             const response = await db.one(`
             UPDATE user_profile
-            SET pet_name1 = '${pet_name1}', pet_breed1 = '${pet_breed1}', pet_age1 = ${pet_age1}, pet_personality1 = '${pet_personality1}', pet_img1 = '${pet_img1}'
+            SET pet_name1 = '${pet_name1}', pet_breed1 = '${pet_breed1}', pet_age1 = ${pet_age1}, pet_personality1 = '${pet_personality1}'
             WHERE user_nickname = '${user_nickname}';`);
             return response;
         } catch(error) {
@@ -77,11 +77,11 @@ class UsersModel {
             return error.message;
         }
     }
-    static async updatePet2(user_nickname, pet_name2, pet_breed2, pet_age2, pet_personality2, pet_img2) {
+    static async updatePet2(user_nickname, pet_name2, pet_breed2, pet_age2, pet_personality2) {
         try {
             const response = await db.one(`
             UPDATE user_profile
-            SET pet_name2 = '${pet_name2}', pet_breed2 = '${pet_breed2}', pet_age2 = ${pet_age2}, pet_personality2 = '${pet_personality2}', pet_img2 = '${pet_img2}'
+            SET pet_name2 = '${pet_name2}', pet_breed2 = '${pet_breed2}', pet_age2 = ${pet_age2}, pet_personality2 = '${pet_personality2}'
             WHERE user_nickname = '${user_nickname}';`);
             return response;
         } catch(error) {
@@ -89,11 +89,11 @@ class UsersModel {
             return error.message;
         }
     }
-    static async updatePet3(user_nickname, pet_name3, pet_breed3, pet_age3, pet_personality3, pet_img3) {
+    static async updatePet3(user_nickname, pet_name3, pet_breed3, pet_age3, pet_personality3) {
         try {
             const response = await db.one(`
             UPDATE user_profile
-            SET pet_name3 = '${pet_name3}', pet_breed3 = '${pet_breed3}', pet_age3 = ${pet_age3}, pet_personality3 = '${pet_personality3}', pet_img3 = '${pet_img3}'
+            SET pet_name3 = '${pet_name3}', pet_breed3 = '${pet_breed3}', pet_age3 = ${pet_age3}, pet_personality3 = '${pet_personality3}'
             WHERE user_nickname = '${user_nickname}';`);
             return response;
         } catch(error) {

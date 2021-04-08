@@ -16,7 +16,6 @@ class PConnectionsModel {
         this.pet_breed = pet_breed;
         this.pet_age = pet_age;
         this.pet_personality = pet_personality;
-        this.pet_img = pet_img;
     }
 
     static async getByUserNickname(user_nickname) {
@@ -24,7 +23,10 @@ class PConnectionsModel {
         const newStr = str.replace(/%7c/g, "|")
         console.log("user_nickname is:", newStr)
         try {
-            const query = `SELECT * FROM user_profile WHERE user_nickname != '${newStr}';`;
+            const query = `
+            SELECT * 
+            FROM user_profile 
+            WHERE user_nickname != '${newStr}';`;
             const response = await db.any(query);
             return response;
         } catch (error) {

@@ -9,7 +9,10 @@
         "express-router": "^0.0.1",
         "nodemon": "^2.0.7",
         "pg-promise": "^10.9.5",
-        "slugify": "^1.5.0"
+        "slugify": "^1.5.0",
+        "http-errors": "~1.6.3",
+        "morgan": "~1.9.1",
+        "node-fetch": "^2.6.1"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
