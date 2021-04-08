@@ -10,8 +10,8 @@ router.get('/', (req, res) => {
 
 router.get('/proxy/:place', async (req, res) => {
     const { place } = req.params;
-
-    const mapsUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?radius=10000&language=en&type=park&query=parks+in+${place}&key=AIzaSyB-fRn8azkVPcHlDIJekteuVleYKApmuFI`
+    const apiKey = process.env.API_KEY
+    const mapsUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?radius=10000&language=en&type=park&query=parks+in+${place}&key=${apiKey}`
     const response = await fetch(mapsUrl).then(response => response.json());
     res.header('Access-Control-Allow-Origin', '*');
         res.header(
