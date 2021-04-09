@@ -71,7 +71,7 @@ class UsersModel {
             SET pet_name1 = '${pet_name1}', pet_breed1 = '${pet_breed1}', pet_age1 = ${pet_age1}, pet_personality1 = '${pet_personality1}'
             WHERE user_nickname = '${user_nickname}';`);
             return response;
-        } catch(error) {
+        } catch (error) {
             console.log("error", error.message)
             return error.message;
         }
@@ -83,7 +83,7 @@ class UsersModel {
             SET pet_name2 = '${pet_name2}', pet_breed2 = '${pet_breed2}', pet_age2 = ${pet_age2}, pet_personality2 = '${pet_personality2}'
             WHERE user_nickname = '${user_nickname}';`);
             return response;
-        } catch(error) {
+        } catch (error) {
             console.log("error", error.message)
             return error.message;
         }
@@ -95,7 +95,7 @@ class UsersModel {
             SET pet_name3 = '${pet_name3}', pet_breed3 = '${pet_breed3}', pet_age3 = ${pet_age3}, pet_personality3 = '${pet_personality3}'
             WHERE user_nickname = '${user_nickname}';`);
             return response;
-        } catch(error) {
+        } catch (error) {
             console.log("error", error.message)
             return error.message;
         }
@@ -109,7 +109,7 @@ class UsersModel {
             SET about_us = '${newStr}'
             WHERE user_nickname = '${user_nickname}';`);
             return response;
-        } catch(error) {
+        } catch (error) {
             console.log("error", error.message)
             return error.message;
         }

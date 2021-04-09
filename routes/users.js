@@ -2,17 +2,17 @@ const express = require('express'),
     router = express.Router(),
     usersModel = require('../models/usersModel');
 
-router.get('/', async (req, res) => {
+router.get('/', async(req, res) => {
     const usersData = await usersModel.getAll();
 
     res.json(usersData).status(200);
 });
 
-router.get('/:user_nickname', async (req, res) => {
+router.get('/:user_nickname', async(req, res) => {
     const { user_nickname } = req.params;
     console.log(req.params)
     const user = await usersModel.getByUserNickname(user_nickname);
-    
+
     if (user) {
         res.json(user).status(200);
     } else {
@@ -62,7 +62,7 @@ router.post('/update/pet3', async (req, res) => {
         res.sendStatus(500)
     }
 });
-router.post('/update/about_us', async (req, res) => {
+router.post('/update/about_us', async(req, res) => {
     const { user_nickname, about_us } = req.body;
     console.log('reqBody: ', req.body);
     const response = await usersModel.updateAboutUs(user_nickname, about_us);
